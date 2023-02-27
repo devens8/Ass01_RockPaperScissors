@@ -11,6 +11,7 @@ public class RockPaperScissors {
 
         Scanner input = new Scanner(System.in); //setup scanner
         System.out.print("Welcome to the Rock, Paper Scissors game! ");
+        //whole program is in do while loop to restart if needed
         do {
             //do while loop to gets PlayerA input
             do {
@@ -22,7 +23,7 @@ public class RockPaperScissors {
                     System.out.println(playerA + " is not valid. Please enter either R, P, or S"); //Tells user input is invalid
                     canLoop = false;
                 }
-            } while (!canLoop);
+            } while (!canLoop); //loops while canloop is false
 
             //do while loop gets PlayerB input
             do {
@@ -34,9 +35,9 @@ public class RockPaperScissors {
                     System.out.println(playerB + " is not valid. Please enter either R, P, or S"); //Tells user input is invalid
                     canLoop = false;
                 }
-            } while (!canLoop);
+            } while (!canLoop); //loops while canloop is false
 
-            if (playerA.equalsIgnoreCase("R")) {
+            if (playerA.equalsIgnoreCase("R")) { //checks conditions if player A is rock, and player B is R, P, or S
                 if (playerB.equalsIgnoreCase("R")) {
                     System.out.println("Rock vs. Rock. It's a tie!");
                 } else if (playerB.equalsIgnoreCase("P")) {
@@ -44,7 +45,7 @@ public class RockPaperScissors {
                 } else {
                     System.out.println("Rock breaks Scissors. Player A wins!");
                 }
-            } else if (playerA.equalsIgnoreCase("P")) {
+            } else if (playerA.equalsIgnoreCase("P")) { //checks conditions if player A is paper, and player B is R, P, or S
                 if (playerB.equalsIgnoreCase("R")) {
                     System.out.println("Paper covers Rock. Player A wins!");
                 } else if (playerB.equalsIgnoreCase("P")) {
@@ -53,7 +54,7 @@ public class RockPaperScissors {
                     System.out.println("Scissors cuts paper. Player B wins!");
                 }
             } else {
-                if (playerB.equalsIgnoreCase("R")) {
+                if (playerB.equalsIgnoreCase("R")) { //checks conditions if player A is scissors, and player B is R, P, or S
                     System.out.println("Rock breaks Scissors. Player B wins!");
                 } else if (playerB.equalsIgnoreCase("P")) {
                     System.out.println("Scissors cuts paper. Player A wins!");
@@ -61,11 +62,11 @@ public class RockPaperScissors {
                     System.out.println("Scissors vs. Scissors. It's a tie!");
                 }
             }
-
+            //do while loop to get yes no input from user
             do {
-                System.out.print("Would you like to play again (Y or N): ");
-                playAgain = input.nextLine();
-                if (playAgain.equalsIgnoreCase("Y")) {
+                System.out.print("Would you like to play again (Y or N): "); //output to user
+                playAgain = input.nextLine(); //stores input
+                if (playAgain.equalsIgnoreCase("Y")) { //conditions to check if yes, no, or invalid output
                     canLoop = true;
                     restart = true;
                 } else if (playAgain.equalsIgnoreCase("N")) {
@@ -75,7 +76,7 @@ public class RockPaperScissors {
                     System.out.println("Sorry, the input is not valid. Please enter Y or N");
                     canLoop = false;
                 }
-            } while (!canLoop);
-        } while(restart);
+            } while (!canLoop); //loops until canloop is true
+        } while(restart); // restarts the whole game, only if user types yes. 
     }
 }
